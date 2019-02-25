@@ -27,5 +27,6 @@ public class PostController {
     @ResponseBody
     public String createPost(@RequestParam(name = "newPost") String post) {
         return post;
+
     }
 }
