@@ -11,7 +11,15 @@ public class Post {
     @Column(nullable = false, length =512)
     private String title;
 
+
     @Column(nullable = false, length =512)
+    private String quote;
+
+    @Column(nullable = false, length =512)
+    private String author;
+
+    @Lob
+    @Column(nullable = false, columnDefinition="BLOB")
     private String body;
 
 
@@ -24,6 +32,13 @@ public class Post {
     public Post(String title, String body) {
         this.title = title;
         this.body = body;
+    }
+
+    public Post(String title, String body, String quote, String author) {
+        this.title = title;
+        this.body = body;
+        this.quote = quote;
+        this.author = author;
     }
 
     public Post(){}
@@ -50,6 +65,22 @@ public class Post {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String getQuote() {
+        return quote;
+    }
+
+    public void setQuote(String quote) {
+        this.quote = quote;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
 }

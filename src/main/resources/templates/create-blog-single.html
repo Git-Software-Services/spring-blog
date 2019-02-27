@@ -7,13 +7,29 @@
     <h2 class="mb-30 pt-5 text-center">CREATE A POST</h2>
     <div class="col-lg-12 paddsection">
         <div class="row justify-content-center">
-            <form th:action="@{/posts/create}" method="post" role="form" class="contactForm">
+            <form th:action="@{/posts/create}" method="post" role="form">
                 <div class="row">
 
                     <div class="col-lg-12">
                         <div class="form-group contact-block1">
                             <input type="text" name="title" class="form-control" id="title" placeholder="Blog Title"
                                    data-rule="required" data-msg="Please enter the title of your blog post"/>
+                            <!--<div class="validation"></div>-->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                        <textarea class="form-control" name="quote" style="resize:none;" rows="6" data-rule="required"
+                                  data-msg="Enter a quote" placeholder="Enter a quote"></textarea>
+                            <!--<div class="validation"></div>-->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group contact-block1">
+                            <input type="text" name="author" class="form-control" id="author" placeholder="Author Name"
+                                   data-rule="required" data-msg="Please enter the author's name"/>
                             <!--<div class="validation"></div>-->
                         </div>
                     </div>

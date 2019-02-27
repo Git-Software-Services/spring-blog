@@ -27,7 +27,10 @@ public class PostController {
     }
 
     @GetMapping("/posts/{id}")
-    public String viewPost(@PathVariable int id){
+    public String viewPost(@PathVariable int id, Model model){
+        Post postView = postDao.findById(id);
+        model.addAttribute("postView", postView);
+
         return "blog-single";
     }
 
@@ -37,9 +40,16 @@ public class PostController {
     }
 
     @PostMapping("/posts/create")
-    public String createPost(@RequestParam String title, @RequestParam String content) {
-        Post post = new Post(title, content);
+    public String createPost(@RequestParam String title, @RequestParam String content, @RequestParam String quote, @RequestParam String author) {
+        Post post = new Post(title, content, quote, author);
         postDao.save(post);
+        return "redirect:/posts";
+    }
+
+    @PostMapping("/posts")
+    public String deletePost(@RequestParam int id) {
+        postDao.findById(id);
+
         return "redirect:/posts";
     }
 }
