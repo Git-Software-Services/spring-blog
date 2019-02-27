@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragment/header :: header" />
+<body>
+    <nav th:replace="fragment/navbar :: navbar"></nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div th:if="${matchingNumber}">
+            <h4>You matched the Matching Number <span th:text="${numberOfMatches}"/> times</h4>
+        </div>
+        <h1>The number you guessed was <span th:text="${n}"/></h1>
+        <h3>The results for each time the dice was rolled...</h3>
+        <div th:each="randomNumber : ${randomNumbers}">
+            <h1>The rolled dice number was <span th:text="${randomNumber}"/></h1>
+        </div>
+    </div>
+    <div th:replace="fragment/footer :: footer"></div>
+</body>
+</html>
