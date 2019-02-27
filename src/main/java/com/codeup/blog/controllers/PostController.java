@@ -46,9 +46,10 @@ public class PostController {
         return "redirect:/posts";
     }
 
-    @PostMapping("/posts")
-    public String deletePost(@RequestParam int id) {
-        postDao.findById(id);
+    @PostMapping("/posts/delete")
+    public String deletePost(@RequestParam int deleteId) {
+//        Post post = postDao.findById(deleteId);
+        postDao.delete(deleteId);
 
         return "redirect:/posts";
     }
