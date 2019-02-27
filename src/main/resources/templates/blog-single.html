@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="fragment/header :: header"/>
+<head th:replace="fragment/header :: header('Blog-Post')"/>
 <body>
     <div th:replace="fragment/navbar :: navbar"></div>
     <!-- start section main content -->
@@ -12,7 +12,7 @@
                         <div class="container-main single-main">
                             <div class="col-md-12">
                                 <div class="block-main mb-30">
-                                    <img src="images/blog-post-big.jpg" class="img-responsive" alt="reviews2">
+                                    <img src="images/blog-post-big.jpg" class="img-responsive" alt="reviews2"/>
                                     <div class="content-main single-post padDiv">
                                         <div class="journal-txt">
                                             <h4><a href="#">SO LETS MAKE THE MOST IS BEAUTIFUL</a></h4>
@@ -72,7 +72,7 @@
                                         <ul class="entry-comments-list list-unstyled">
                                             <li>
                                                 <div class="entry-comments-item">
-                                                    <img src="images/avatar.jpg" class="entry-comments-avatar" alt="">
+                                                    <img src="images/avatar.jpg" class="entry-comments-avatar" alt=""/>
                                                     <div class="entry-comments-body">
                                                         <span class="entry-comments-author">Sommer Christian</span>
                                                         <span><a href="#">fev 14, 2018 at 12:48 pm</a></span>
@@ -87,7 +87,7 @@
                                                     <li>
                                                         <div class="entry-comments-item">
                                                             <img src="images/avatar.jpg" class="entry-comments-avatar"
-                                                                 alt="">
+                                                                 alt=""/>
                                                             <div class="entry-comments-body">
                                                                 <span class="entry-comments-author">Sara Smith</span>
                                                                 <span><a href="#">fev 14, 2018 at 12:51 pm</a></span>
@@ -103,7 +103,7 @@
                                             </li>
                                             <li>
                                                 <div class="entry-comments-item">
-                                                    <img src="images/avatar.jpg" class="entry-comments-avatar" alt="">
+                                                    <img src="images/avatar.jpg" class="entry-comments-avatar" alt=""/>
                                                     <div class="entry-comments-body">
                                                         <span class="entry-comments-author">Andrew Lupkin</span>
                                                         <span><a href="#">fev 14, 2018 at 12:55 pm</a></span>
@@ -126,14 +126,14 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <input id="form_name" type="text" name="name" class="form-control"
-                                                           placeholder="Name *" required="required">
+                                                           placeholder="name" required="required">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <input id="form_email" type="email" name="email"
                                                            class="form-control" placeholder="email *"
-                                                           required="required">
+                                                           required="required"/>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -150,7 +150,7 @@
                                             </div>
                                             <div class="col-lg-12">
                                                 <input type="submit" class="btn btn-defeault btn-send"
-                                                       value="Send message">
+                                                       value="Send message"/>
                                             </div>
                                         </div>
                                     </form>

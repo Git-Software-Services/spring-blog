@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<th:block th:fragment="navbar">
-    <nav id="main-nav">
-        <div class="row">
-            <div class="container">
-                <div class="logo">
-                    <a href="index.html"><img src="images/dw-logo.png" alt="logo"/></a></div>
-                <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
-                <ul class="nav-menu list-unstyled">
-                    <li><a th:href="@{/}" class="smoothScroll">Home</a></li>
-                    <li><a th:href="@{/About}" class="smoothScroll">Home</a></li>
-                    <li><a th:href="@{/Portfolio}" class="smoothScroll">Home</a></li>
-                    <li><a th:href="@{/Blog}" class="smoothScroll">Home</a></li>
-                    <li><a th:href="@{/Contact}" class="smoothScroll">Home</a></li>
-                    <!--<li><a href="#about" class="smoothScroll">About</a></li>-->
-                </ul>
+<body>
+    <th:block th:fragment="navbar">
+        <nav id="main-nav">
+            <div class="row">
+                <div class="container">
+                    <div class="logo">
+                        <a href="index.html"><img src="images/dw-logo.png" alt="logo"/></a></div>
+                    <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+                    <ul class="nav-menu list-unstyled">
+                        <li><a th:href="@{/}" class="smoothScroll">Home</a></li>
+                        <li><a th:href="@{/About}" class="smoothScroll">About</a></li>
+                        <li><a th:href="@{/Portfolio}" class="smoothScroll">Portfolio</a></li>
+                        <li><a th:href="@{/posts}" class="smoothScroll">Blog</a></li>
+                        <li><a th:href="@{/Contact}" class="smoothScroll">Contact</a></li>
+                        <!--<li><a href="#about" class="smoothScroll">About</a></li>-->
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</th:block>
+        </nav>
+    </th:block>
+</body>
 </html>

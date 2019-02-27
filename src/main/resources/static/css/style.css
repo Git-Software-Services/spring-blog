@@ -446,6 +446,7 @@ nav ul li a {
 
 .portfolio-thumbnail img {
   max-width: 100%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -628,4 +629,13 @@ nav ul li a {
 
 .credits {
   font-size: 13px;
+
+}
+
+.shadow {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-control {
+  height: 300%;
 }
