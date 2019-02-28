@@ -38,6 +38,24 @@
                 </div>
             </div>
         </div>
+        <div class="row justify-content-center">
+            <form th:action="@{/posts/delete}" method="post" role="form" class="d-inline">
+                <div class="col text-center">
+                    <button type="button" name="deleteId" class="btn btn-danger btn-sm"
+                            th:value="${postView.id}">Delete
+                    </button>
+                </div>
+            </form>
+            <form th:action="@{/posts/edit/{id}(id=${postView.id})}" method="get" role="form" class="d-inline">
+                <div class="col text-center">
+                    <button type="submit" name="editId" class="btn btn-default btn-sm"
+                            th:value="${postView.id}">Edit
+                    </button>
+                </div>
+            </form>
+            <div class="paddsection"></div>
+            <div class="paddsection"></div>
+        </div>
     </div>
     <div th:replace="fragment/footer :: footer"></div>
 </body>

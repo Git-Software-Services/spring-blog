@@ -46,11 +46,29 @@ public class PostController {
         return "redirect:/posts";
     }
 
+    @GetMapping("/posts/edit/{id}")
+    public String editPostForm(@PathVariable int id, Model model){
+        Post post = postDao.findOne(id);
+        model.addAttribute("post", post);
+        return "edit-blog-single";
+    }
+
+    @PostMapping("/posts/edit/{id}")
+    public String editPost(@PathVariable int id, @RequestParam String title, @RequestParam String content, @RequestParam String quote, @RequestParam String author, Model model) {
+        Post post = postDao.findOne(id);
+
+        post.setAuthor(author);
+        post.setBody(content);
+        post.setQuote(quote);
+        post.setTitle(title);
+
+        postDao.save(post);
+        return "redirect:/posts/" + id;
+    }
+
     @PostMapping("/posts/delete")
     public String deletePost(@RequestParam int deleteId) {
-//        Post post = postDao.findById(deleteId);
         postDao.delete(deleteId);
-
         return "redirect:/posts";
     }
 }
