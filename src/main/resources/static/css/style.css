@@ -639,3 +639,8 @@ nav ul li a {
 .form-control {
   height: 300%;
 }
+
+.img-fluid-blog {
+  height: 10em!important;
+  object-fit: contain!important;
+}

@@ -1,4 +1,4 @@
-package com.codeup.blog.controllers;
+package com.codeup.blog;
 
 import com.codeup.blog.models.Post;
 import org.springframework.data.repository.CrudRepository;

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="fragment/header :: header('Blog-Post')"/>
+<head th:replace="fragment/header :: header('My-Project')"/>
 <body>
     <div th:replace="fragment/navbar :: navbar"></div>
     <!-- start section main content -->
@@ -12,24 +12,18 @@
                         <div class="container-main single-main">
                             <div class="col-md-12">
                                 <div class="block-main mb-30">
-                                    <img th:src="${'/images/' + postView.getImage()}" class="img-responsive" alt="reviews2"/>
+                                    <img th:src="${'/portfolio-images/' + postView.getPortImage()}" class="img-responsive" alt="reviews2"/>
                                     <div class="content-main single-post padDiv">
                                         <div class="journal-txt row justify-content-center">
-                                            <h4><span th:text="${postView.getTitle()}">World</span></h4>
+                                            <h4><span th:text="${postView.getPortTitle()}">World</span></h4>
                                         </div>
                                         <div class="post-meta row justify-content-center">
                                             <ul class="list-unstyled mb-0">
-                                                <li class="author">by:<a href="#">Dorian</a></li>
+                                                <li class="author">by:<a href="#">Dorian Wallace</a></li>
                                                 <li class="date">date:<a href="#">March 31, 2017</a></li>
                                             </ul>
                                         </div>
-                                        <p><span th:text="${postView.getBody()}"></span></p>
-
-                                        <blockquote>
-                                            <span th:text="${postView.getQuote()}"></span><br/>
-                                            <cite> –<span
-                                                    th:text="${postView.getAuthor()}"></span></cite>
-                                        </blockquote>
+                                        <p><span th:text="${postView.getPortBody()}"></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -39,17 +33,17 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <form th:action="@{/posts/delete}" method="post" th:object="${post}" role="form" class="d-inline">
+            <form th:action="@{/portfolio/delete}" method="post" th:object="${portfolio}" role="form" class="d-inline">
                 <div class="col text-center">
-                    <button type="button" th:field="*{deleteId}" class="btn btn-danger btn-sm"
-                            th:value="${postView.id}">Delete
+                    <button type="button" th:field="*{deletePortId}" class="btn btn-danger btn-sm"
+                            th:value="${postView.portId}">Delete
                     </button>
                 </div>
             </form>
-            <form th:action="@{/posts/edit/{id}(id=${postView.id})}" method="get" role="form" class="d-inline">
+            <form th:action="@{/portfolio/edit/{id}(id=${postView.portId})}" method="get" role="form" class="d-inline">
                 <div class="col text-center">
-                    <button type="submit" th:name="${editId}" class="btn btn-default btn-sm"
-                            th:value="${postView.id}">Edit
+                    <button type="submit" th:name="${editPortId}" class="btn btn-default btn-sm"
+                            th:value="${postView.portId}">Edit
                     </button>
                 </div>
             </form>
@@ -59,4 +53,4 @@
     </div>
     <div th:replace="fragment/footer :: footer"></div>
 </body>
-</html>
+</html>>

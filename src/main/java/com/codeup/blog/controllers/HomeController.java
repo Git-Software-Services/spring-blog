@@ -19,6 +19,11 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping("/resume")
+    public String showResume() {
+        return "resume";
+    }
+
     @PostMapping("/hello")
     @ResponseBody
     public String getPassword(@RequestParam(name = "password") String pass) {

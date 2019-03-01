@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragment/header :: header('Resume')"/>
+<body>
+    <div th:replace="fragment/navbar :: navbar"></div>
+    <!-- start section main content -->
+    <div class="main-content paddsection">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="row">
+
+
+
+                        <div class="col-12">
+
+                            <p>My curious nature led me to software development where I thrive naturally. I enjoy combining logic with complex design and managing the various milestones that accompany team projects. I am in awe of the impact technology has on the world and I take great pleasure in being a part of the creation.</p>
+                            <h3>Technical Skills</h3>􏰇􏰆􏰍􏰄
+                            <p>HTML - CSS - Bootstrap - Javascript - jQuery - npm - Maven - Java - Spring - MySQL - Git - Photoshop</p>
+
+                            <h3>Military Experience</h3>
+                            <p>􏰁􏰂US Army, 06/2002 to 06/2006</p>
+                            <p>Provided specialist work with battlefield signal support systems and terminal devices for the Army during and after Operation Iraqi Freedom.</p>
+                            <p>Secret Security Clearance (Lapsed)</p>
+                            <h3>Professional Experience</h3>
+                            <h3>Technologist Intern, 07/2018 to 10/2018</h3>
+                            <h4>Elegant Software Solutions</h4>
+                            <p>An internship program that specialized in highly focused, immersive training centered on language fluency, object-oriented
+                            programming, and project-based learning. </p>
+                            <h3>Cafe Manager, 04/2018 to 07/2018</h3>
+                            <h4>3:8 Juice And Eatery</h4>
+                            <p>I took the knowledge I received in culinary school and expanded my talent for creating great cuisine into a position where I managed a handful of employees while running the day-to-day operations of a small cafe.</p>
+                            <h4>Assistant Manager, 04/2015 to 03/2018</h4>
+                            <h3>Lifetime Fitness Life Cafe</h3>
+                            <p>I assisted in managing and overseeing the café with the Café Manager. I managed keeping costs at a minimum, training and developing staff, maintaining cleanliness, and executing recipes to standard.</p>
+                           <h3> Field Service Engineer, 11/2006 to 06/2014</h3>
+                            <h4>Government Contracting</h4>
+                            <p>I traveled to different bases in Afghanistan, Iraq and Kuwait providing onsite installations and repairs of counter-electronic warfare systems for various government clients and branches of the military.</p>
+                            <h3>Education</h3>
+                            <h4>Codeup, 11/2018 to 03/2019</h4>
+                            <p>Codeup is a fully-immersive, project-based, and intensive 18 week full stack Java career accelerator that provides students with 600+ hours of expert instruction in software development.</p>
+                        </div>
+
+
+
+                        <!--<div class="container-main single-main">-->
+                            <!--<div class="col-md-12">-->
+                                <!--<div class="block-main mb-30">-->
+                                    <!--<img th:src="${'/images/' + postView.getImage()}" class="img-responsive" alt="reviews2"/>-->
+                                    <!--<div class="content-main single-post padDiv">-->
+                                        <!--<div class="journal-txt row justify-content-center">-->
+                                            <!--<h4><span th:text="${postView.getTitle()}">World</span></h4>-->
+                                        <!--</div>-->
+                                        <!--<div class="post-meta row justify-content-center">-->
+                                            <!--<ul class="list-unstyled mb-0">-->
+                                                <!--<li class="author">by:<a href="#">Dorian</a></li>-->
+                                                <!--<li class="date">date:<a href="#">March 31, 2017</a></li>-->
+                                            <!--</ul>-->
+                                        <!--</div>-->
+                                        <!--<p><span th:text="${postView.getBody()}"></span></p>-->
+
+                                        <!--<blockquote>-->
+                                            <!--<span th:text="${postView.getQuote()}"></span><br/>-->
+                                            <!--<cite> –<span-->
+                                                    <!--th:text="${postView.getAuthor()}"></span></cite>-->
+                                        <!--</blockquote>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row justify-content-center">-->
+            <!--<form th:action="@{/posts/delete}" method="post" th:object="${post}" role="form" class="d-inline">-->
+                <!--<div class="col text-center">-->
+                    <!--<button type="button" th:field="*{deleteId}" class="btn btn-danger btn-sm"-->
+                            <!--th:value="${postView.id}">Delete-->
+                    <!--</button>-->
+                <!--</div>-->
+            <!--</form>-->
+            <!--<form th:action="@{/posts/edit/{id}(id=${postView.id})}" method="get" role="form" class="d-inline">-->
+                <!--<div class="col text-center">-->
+                    <!--<button type="submit" th:name="${editId}" class="btn btn-default btn-sm"-->
+                            <!--th:value="${postView.id}">Edit-->
+                    <!--</button>-->
+                <!--</div>-->
+            <!--</form>-->
+            <!--<div class="paddsection"></div>-->
+            <!--<div class="paddsection"></div>-->
+        <!--</div>-->
+    </div>
+    <div th:replace="fragment/footer :: footer"></div>
+</body>
+</html>tml>

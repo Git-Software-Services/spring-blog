@@ -1,12 +1,15 @@
 package com.codeup.blog.controllers;
 
+import com.codeup.blog.PostRepository;
 import com.codeup.blog.models.Post;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.multipart.MultipartFile;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Paths;
 
 @Controller
 public class PostController {
@@ -18,11 +21,7 @@ public class PostController {
     }
     @GetMapping("/posts")
     public String allPosts(Model model){
-//        List<Post> posts = new ArrayList<>();
-//        posts.add(new Post(2, "CSS rocks", "Declarative programming languages are awesome"));
-//        posts.add(new Post(3, "JS is fun", "Programming is a way of thinking. Think in JS"));
         model.addAttribute("posts", postDao.findAll());
-//        model.addAttribute("posts", posts);
         return "blog-grid";
     }
 
@@ -30,18 +29,29 @@ public class PostController {
     public String viewPost(@PathVariable int id, Model model){
         Post postView = postDao.findById(id);
         model.addAttribute("postView", postView);
-
         return "blog-single";
     }
 
     @GetMapping("/posts/create")
-    public String viewPostForm(){
+    public String viewPostForm(Model model){
+        model.addAttribute("post", new Post());
         return "create-blog-single";
     }
 
     @PostMapping("/posts/create")
-    public String createPost(@RequestParam String title, @RequestParam String content, @RequestParam String quote, @RequestParam String author) {
-        Post post = new Post(title, content, quote, author);
+    public String createPost(@ModelAttribute Post post, @RequestParam(name="file") MultipartFile uploadedFile, Model model) {
+        String filename = uploadedFile.getOriginalFilename();
+        String filepath = Paths.get(uploadPath, filename).toString();
+        File destinationFile = new File(filepath);
+
+        try {
+            uploadedFile.transferTo(destinationFile);
+            model.addAttribute("message", "File successfully uploaded!");
+        } catch (IOException e) {
+            e.printStackTrace();
+            model.addAttribute("message", "Oops! Something went wrong! " + e);
+        }
+        post.setImage(filename);
         postDao.save(post);
         return "redirect:/posts";
     }
@@ -53,15 +63,25 @@ public class PostController {
         return "edit-blog-single";
     }
 
+    @Value("${file-upload-path}")
+private String uploadPath;
+
+
     @PostMapping("/posts/edit/{id}")
-    public String editPost(@PathVariable int id, @RequestParam String title, @RequestParam String content, @RequestParam String quote, @RequestParam String author, Model model) {
-        Post post = postDao.findOne(id);
+    public String editPost(@PathVariable int id, @ModelAttribute Post post, @RequestParam(name="file") MultipartFile uploadedFile, Model model) {
+//        Util.upperCasedTitle(post.getTitle());
+        String filename = uploadedFile.getOriginalFilename();
+        String filepath = Paths.get(uploadPath, filename).toString();
+        File destinationFile = new File(filepath);
 
-        post.setAuthor(author);
-        post.setBody(content);
-        post.setQuote(quote);
-        post.setTitle(title);
-
+        try {
+            uploadedFile.transferTo(destinationFile);
+            model.addAttribute("message", "File successfully uploaded!");
+        } catch (IOException e) {
+            e.printStackTrace();
+            model.addAttribute("message", "Oops! Something went wrong! " + e);
+        }
+        post.setImage(filename);
         postDao.save(post);
         return "redirect:/posts/" + id;
     }
