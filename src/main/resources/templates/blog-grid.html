@@ -8,7 +8,7 @@
 
         <div class="container">
             <div class="section-title text-center">
-                <h2>My Blog</h2>
+                <h2>Notes</h2>
             </div>
         </div>
 
@@ -27,9 +27,12 @@
 
                                 <h4><a th:href="@{/posts/{id}(id = ${post.id})}"></a><span th:text="${post.title}"/>
                                 </h4>
+                                <p class="text-truncate d-inline-block" style="max-width: 250px;"><a
+                                        th:href="@{/posts/{id}(id = ${post.id})}"></a><span
+                                        th:text="${post.body}"></span>
+                                </p>
                                 <p class="separator">
                                 </p>
-
                             </div>
                         </div>
                     </div>
@@ -37,6 +40,8 @@
             </div>
         </div>
     </div>
+    <div class="paddsection"></div>
+    <div class="paddsection"></div>
     <!-- End section journal -->
     <div th:replace="fragment/footer :: footer"></div>
 </body>

@@ -8,33 +8,40 @@
 
         <div class="container">
             <div class="section-title text-center">
-                <h2>My Portfolio</h2>
+                <h2>Work</h2>
             </div>
         </div>
-        <div class="container">
+        <div class="container paddsection">
             <div class="journal-block">
                 <div class="row">
                     <div th:each="project : ${portfolio}" class="text-center col-lg-4 col-md-6">
                         <div class="journal-info">
 
-                            <a th:href="@{/portfolio/{portId}(portId = ${project.portId})}"><img th:src="${'/portfolio-images/' + project.getPortImage()}"
-                                                                              class="img-fluid-blog img-thumbnail"
-                                                                              alt="img"/></a>
+                            <a th:href="@{/portfolio/{portId}(portId = ${project.portId})}"><img
+                                    th:src="${'/portfolio-images/' + project.getPortImage()}"
+                                    class="img-fluid-blog img-thumbnail"
+                                    alt="img"/></a>
 
                             <div class="journal-txt text-center">
-
-                                <h4><a th:href="@{/portfolio/{portId}(portId = ${project.portId})}"></a><span th:text="${project.portTitle}"/>
+                                <h4><a th:href="@{/portfolio/{portId}(portId = ${project.portId})}"></a><span
+                                        th:text="${project.portTitle}"/>
                                 </h4>
-                                <p class="separator">
-                                </p>
-
+                                <p class="separator"></p>
                             </div>
+
+                            <p class="text-truncate d-inline-block" style="max-width: 250px;"><a
+                                    th:href="@{/portfolio/{portId}(portId = ${project.portId})}"></a><span
+                                    th:text="${project.portBody}"/>
+                            </p>
+                            <p class="separator">
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="paddsection"></div>
     <!-- End section journal -->
     <div th:replace="fragment/footer :: footer"></div>
 </body>
