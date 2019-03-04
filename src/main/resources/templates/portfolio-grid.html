@@ -5,36 +5,32 @@
     <div th:replace="fragment/navbar :: navbar"></div>
     <!-- start section journal -->
     <div id="journal-blog" class="text-left  paddsections">
-
-        <div class="container">
-            <div class="section-title text-center">
-                <h2>Work</h2>
-            </div>
+        <div class="container text-center">
+            <h2>Work</h2>
         </div>
+        <hr/>
         <div class="container paddsection">
             <div class="journal-block">
                 <div class="row">
-                    <div th:each="project : ${portfolio}" class="text-center col-lg-4 col-md-6">
-                        <div class="journal-info">
-
+                    <div th:each="project : ${portfolio}" class="text-center col-lg-4 col-md-6 ">
+                        <div class="card view view-tenth text-center">
                             <a th:href="@{/portfolio/{portId}(portId = ${project.portId})}"><img
-                                    th:src="${'/portfolio-images/' + project.getPortImage()}"
-                                    class="img-fluid-blog img-thumbnail"
+                                    th:src="${'/portfolio-images/' + project.getPortImage()}" class=" card-img-bottom"
                                     alt="img"/></a>
-
-                            <div class="journal-txt text-center">
-                                <h4><a th:href="@{/portfolio/{portId}(portId = ${project.portId})}"></a><span
-                                        th:text="${project.portTitle}"/>
-                                </h4>
-                                <p class="separator"></p>
-                            </div>
-
-                            <p class="text-truncate d-inline-block" style="max-width: 250px;"><a
+                            <!--<div class=" card-body ">-->
+                            <h2><a th:href="@{/portfolio/{portId}(portId = ${project.portId})}"></a><span
+                                    th:text="${project.portTitle}"/></h2>
+                            <p class="text-truncate d-inline-block " style="max-width: 350px;"><a
                                     th:href="@{/portfolio/{portId}(portId = ${project.portId})}"></a><span
-                                    th:text="${project.portBody}"/>
-                            </p>
-                            <p class="separator">
-                            </p>
+                                    th:text="${project.portBody}"/></p>
+                        </div>
+                    </div>
+                    <!--Button to create another project-->
+                    <div class=" text-center col-lg-4 col-md-6">
+                        <div class="card view view-tenth text-center">
+                            <a th:href="@{/posts/create}"><img th:src="@{~/images/add.png}" class="card-img-bottom"
+                                                               alt="add"/></a>
+                            <h2 class="text-truncate d-inline-block">Add another Post</h2>
                         </div>
                     </div>
                 </div>
@@ -43,6 +39,6 @@
     </div>
     <div class="paddsection"></div>
     <!-- End section journal -->
-    <div th:replace="fragment/footer :: footer"></div>
+    <div th:replace="fragment/footer :: footer" class="shadow"></div>
 </body>
 </html>

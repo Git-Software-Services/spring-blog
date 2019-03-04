@@ -2,6 +2,8 @@ package com.codeup.blog.controllers;
 
 import com.codeup.blog.PostRepository;
 import com.codeup.blog.models.Post;
+import com.codeup.blog.services.EmailServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,8 +17,10 @@ import java.nio.file.Paths;
 public class PostController {
 
     private final PostRepository postDao;
+   @Autowired
+   private EmailServices emailServices;
 
-    public PostController(PostRepository postDao){
+    public PostController( PostRepository postDao){
         this.postDao = postDao;
     }
     @GetMapping("/posts")
@@ -53,6 +57,8 @@ public class PostController {
         }
         post.setImage(filename);
         postDao.save(post);
+        emailServices.prepareAndSend(post, "Post created", "the post was created successfully with the id" + post.getId());
+
         return "redirect:/posts";
     }
 
@@ -87,7 +93,7 @@ private String uploadPath;
     }
 
     @PostMapping("/posts/delete")
-    public String deletePost(@RequestParam int deleteId) {
+    public String deletePost( @RequestParam int deleteId) {
         postDao.delete(deleteId);
         return "redirect:/posts";
     }

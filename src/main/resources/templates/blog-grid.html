@@ -5,35 +5,32 @@
     <div th:replace="fragment/navbar :: navbar"></div>
     <!-- start section journal -->
     <div id="journal-blog" class="text-left  paddsections">
-
-        <div class="container">
-            <div class="section-title text-center">
-                <h2>Notes</h2>
-            </div>
+        <div class="container text-center">
+            <h2>Notes</h2>
         </div>
-
-        <div class="container">
+        <hr/>
+        <div class="container paddsection">
             <div class="journal-block">
                 <div class="row">
-
                     <div th:each="post : ${posts}" class="text-center col-lg-4 col-md-6">
-                        <div class="journal-info">
-
+                        <div class="card view view-tenth text-center">
                             <a th:href="@{/posts/{id}(id = ${post.id})}"><img th:src="${'/images/' + post.getImage()}"
-                                                                              class="img-fluid-blog img-thumbnail"
+                                                                              class="card-img-bottom"
                                                                               alt="img"/></a>
-
-                            <div class="journal-txt text-center">
-
-                                <h4><a th:href="@{/posts/{id}(id = ${post.id})}"></a><span th:text="${post.title}"/>
-                                </h4>
-                                <p class="text-truncate d-inline-block" style="max-width: 250px;"><a
-                                        th:href="@{/posts/{id}(id = ${post.id})}"></a><span
-                                        th:text="${post.body}"></span>
-                                </p>
-                                <p class="separator">
-                                </p>
-                            </div>
+                            <h2><a th:href="@{/posts/{id}(id = ${post.id})}"></a><span th:text="${post.title}"/>
+                            </h2>
+                            <p class="text-truncate d-inline-block" style="max-width: 350px;"><a
+                                    th:href="@{/posts/{id}(id = ${post.id})}"></a><span
+                                    th:text="${post.body}"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <!--Button to create another project-->
+                    <div class=" text-center col-lg-4 col-md-6">
+                        <div class="card view view-tenth text-center">
+                            <a th:href="@{/posts/create}"><img th:src="@{~/images/add.png}" class="card-img-bottom"
+                                                               alt="add"/></a>
+                            <h2 class="text-truncate d-inline-block">Add another Post</h2>
                         </div>
                     </div>
                 </div>
@@ -41,8 +38,7 @@
         </div>
     </div>
     <div class="paddsection"></div>
-    <div class="paddsection"></div>
     <!-- End section journal -->
-    <div th:replace="fragment/footer :: footer"></div>
+    <div th:replace="fragment/footer :: footer" class="shadow"></div>
 </body>
 </html>

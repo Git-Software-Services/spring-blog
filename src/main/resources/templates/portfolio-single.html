@@ -12,7 +12,8 @@
                         <div class="container-main single-main">
                             <div class="col-md-12">
                                 <div class="block-main mb-30">
-                                    <img th:src="${'/portfolio-images/' + postView.getPortImage()}" class="img-responsive" alt="reviews2"/>
+                                    <img th:src="${'/portfolio-images/' + postView.getPortImage()}" class="img-fit"
+                                         alt="reviews2"/>
                                     <div class="content-main single-post padDiv">
                                         <div class="journal-txt row justify-content-center">
                                             <h4><span th:text="${postView.getPortTitle()}"></span></h4>
@@ -33,9 +34,10 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <form th:action="@{/portfolio/delete}" method="post" th:object="${portfolio}" role="form" class="d-inline">
+            <form th:action="@{/portfolio/delete}" method="post" role="form"
+                  class="d-inline">
                 <div class="col text-center">
-                    <button type="button" th:field="*{deletePortId}" class="btn btn-danger btn-sm"
+                    <button type="submit" name="deletePortId" class="btn btn-danger btn-sm"
                             th:value="${postView.portId}">Delete
                     </button>
                 </div>

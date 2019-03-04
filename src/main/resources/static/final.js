@@ -76,13 +76,17 @@ $(document).ready(function() {
 
     var typed = $(".typed");
 
+
     $(function() {
         typed.typed({
-            strings: ["Dorian Wallace.", "a Software Developer", " a Full-Stack Software Developer."],
+            strings: ["Hi! My name is Dorian Wallace and I'm a Software Developer."],
             typeSpeed: 100,
             loop: false,
         });
+
+
     });
+
 
 
     // ========================================================================= //

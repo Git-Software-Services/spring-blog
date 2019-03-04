@@ -10,31 +10,34 @@
                 <div class="col-md-8 col-md-offset-2">
                     <div class="row">
                         <div class="col-12">
+                            <div class="alert alert-info alert-dismissible fade show mb-5" role="alert">
+                                <p class="mb-0 mt-0 text-center">For a list of my portfolio projects please got to my <a
+                                        th:href="@{/portfolio}" class="alert-link">Portfolio page</a>.</p>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
 
-                            <p>My curious nature led me to software development where I thrive naturally. I enjoy
+                            <p class="pb-2">My curious nature led me to software development where I thrive naturally. I
+                                enjoy
                                 combining logic with complex design and managing the various milestones that accompany
-                                team projects. I am in awe of the impact technology has on the world and I take great
+                                team projects.</p>
+                            <p>I am in awe of the impact technology has on the world and I take great
                                 pleasure in being a part of the creation.</p>
 
-                            <hr />
-                            <div class="badge badge-secondary">
-                                <h3>Technical Skills</h3>
-                            </div>
+                            <hr/>
+                            <h2>Technical Skills</h2>
                             <p class="text-center"><strong>HTML - CSS - Bootstrap - Javascript - jQuery - Java - Spring
                                 Boot - MySQL - Git</strong></p>
-                            <hr />
-                            <div class="badge badge-secondary">
-                                <h3>Military Experience</h3>
-                            </div>
+                            <hr/>
+                            <h2>Military Experience</h2>
                             <p class="lead">US Army, 06/2002 to 06/2006</p>
                             <p class="mb-1">Provided specialist work with battlefield signal support systems and
                                 terminal devices for the Army during and after Operation Iraqi Freedom.</p>
                             <p class="mb-5">Secret Security Clearance (Lapsed)</p>
 
-                            <hr />
-                            <div class="badge badge-secondary">
-                                <h3>Professional Experience</h3>
-                            </div>
+                            <hr/>
+                            <h2>Professional Experience</h2>
                             <p class="lead mb-2">Technologist Intern, 07/2018 to 10/2018</p>
                             <h4>Elegant Software Solutions</h4>
                             <p class="mb-5">An internship program that specialized in highly focused, immersive training
@@ -55,64 +58,17 @@
                             <p class="mb-5"> I traveled to different bases in Afghanistan, Iraq and Kuwait providing
                                 onsite installations and repairs of counter-electronic warfare systems for various
                                 government clients and branches of the military.</p>
-                            <hr />
-                            <div class="badge badge-secondary">
-                                <h3>Education</h3>
-                            </div>
+                            <hr/>
+                            <h2>Education</h2>
                             <p class="lead">Codeup, 11/2018 to 04/2019</p>
                             <p>Codeup is a fully-immersive, project-based, and intensive 18 week full stack Java career
                                 accelerator that provides students with 600+ hours of expert instruction in software
                                 development.</p>
                         </div>
-
-
-                        <!--<div class="container-main single-main">-->
-                        <!--<div class="col-md-12">-->
-                        <!--<div class="block-main mb-30">-->
-                        <!--<img th:src="${'/images/' + postView.getImage()}" class="img-responsive" alt="reviews2"/>-->
-                        <!--<div class="content-main single-post padDiv">-->
-                        <!--<div class="journal-txt row justify-content-center">-->
-                        <!--<h4><span th:text="${postView.getTitle()}">World</span></h4>-->
-                        <!--</div>-->
-                        <!--<div class="post-meta row justify-content-center">-->
-                        <!--<ul class="list-unstyled mb-0">-->
-                        <!--<li class="author">by:<a href="#">Dorian</a></li>-->
-                        <!--<li class="date">date:<a href="#">March 31, 2017</a></li>-->
-                        <!--</ul>-->
-                        <!--</div>-->
-                        <!--<p><span th:text="${postView.getBody()}"></span></p>-->
-
-                        <!--<blockquote>-->
-                        <!--<span th:text="${postView.getQuote()}"></span><br/>-->
-                        <!--<cite> –<span-->
-                        <!--th:text="${postView.getAuthor()}"></span></cite>-->
-                        <!--</blockquote>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
                     </div>
                 </div>
             </div>
         </div>
-        <!--<div class="row justify-content-center">-->
-        <!--<form th:action="@{/posts/delete}" method="post" th:object="${post}" role="form" class="d-inline">-->
-        <!--<div class="col text-center">-->
-        <!--<button type="button" th:field="*{deleteId}" class="btn btn-danger btn-sm"-->
-        <!--th:value="${postView.id}">Delete-->
-        <!--</button>-->
-        <!--</div>-->
-        <!--</form>-->
-        <!--<form th:action="@{/posts/edit/{id}(id=${postView.id})}" method="get" role="form" class="d-inline">-->
-        <!--<div class="col text-center">-->
-        <!--<button type="submit" th:name="${editId}" class="btn btn-default btn-sm"-->
-        <!--th:value="${postView.id}">Edit-->
-        <!--</button>-->
-        <!--</div>-->
-        <!--</form>-->
-        <!--<div class="paddsection"></div>-->
-        <!--<div class="paddsection"></div>-->
-        <!--</div>-->
     </div>
     <div th:replace="fragment/footer :: footer"></div>
 </body>
