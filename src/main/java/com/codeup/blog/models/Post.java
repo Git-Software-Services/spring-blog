@@ -20,8 +20,7 @@ public class Post {
     @Column(nullable = false, length =512)
     private String author;
 
-    @Lob
-    @Column(nullable = false, columnDefinition="BLOB")
+    @Column(nullable = false, columnDefinition="TEXT")
     private String body;
 
     @Column

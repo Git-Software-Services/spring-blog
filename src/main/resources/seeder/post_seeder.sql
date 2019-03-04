@@ -29,3 +29,18 @@ We used Maven to manage all the dependencies for the project.
 Passwords are properly handled using hash and salt methods and prepared statements are used to avoid SQL injections.', 'The Mentor-Lister Project', 'adlister_proj.png'),
 
 (' This is a simple web application I built using HTML, CSS, jQuery, ajax, the OpenWeatherMap API, and the Google Maps API to display a three day forecast for any city search or any location clicked on the map.', 'The Weather Project', 'weather_proj.png'),
+
+('The Mentor-Lister Project is essentially a bare bones craigslist clone. We worked in small teams to allow ourselves to become more familiar with git pull requests and handling merge conflicts.
+Features for this project include:
+
+Users can view all the ads that have been posted
+An ad has a title, a description, and a link to the user that posted it
+Users can register for the site
+Users can log in to the application
+Logged in users can create ads with a title and description
+
+We used Java to dynamically generate html pages with the help of JSPs (Java Server Pages) and the JSTL (JSP Standard Tag Library) and to interact with a MySQL database that we created using mySql.
+We used Maven to manage all the dependencies for the project.
+Passwords are properly handled using hash and salt methods and prepared statements are used to avoid SQL injections.', 'The Mentor-Lister Project', 'adlister_proj.png'),
+
+('Satya Yoga Trips is a small side project I took on for my wife,my favorite client. I found a template that she liked and tailored it to fit her brand. I connected email service, paypal to accept payments and connected the domain and local site to a hosting service and secured the SSL certificate. I provide ongoing services to assist in making changes to the website when needed. Future plans involve migrating the site over to a CMS I create, much like this one, to enable her to create and update her own content.', 'The SYT Project', 'satya_proj.png'),

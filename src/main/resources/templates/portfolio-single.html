@@ -12,11 +12,11 @@
                         <div class="container-main single-main">
                             <div class="col-md-12">
                                 <div class="block-main mb-30">
-                                    <img th:src="${'/portfolio-images/' + postView.getPortImage()}" class="img-fit"
+                                    <img th:src="${'/portfolio-images/' + postView.getImage()}" class="img-fit"
                                          alt="reviews2"/>
                                     <div class="content-main single-post padDiv">
                                         <div class="journal-txt row justify-content-center">
-                                            <h4><span th:text="${postView.getPortTitle()}"></span></h4>
+                                            <h4><span th:text="${postView.getTitle()}"></span></h4>
                                         </div>
                                         <div class="post-meta row justify-content-center">
                                             <ul class="list-unstyled mb-0">
@@ -24,7 +24,7 @@
                                                 <li class="date">date:<a href="#">March 31, 2017</a></li>
                                             </ul>
                                         </div>
-                                        <p><span th:text="${postView.getPortBody()}"></span></p>
+                                        <p><span th:text="${postView.getBody()}"></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -37,15 +37,15 @@
             <form th:action="@{/portfolio/delete}" method="post" role="form"
                   class="d-inline">
                 <div class="col text-center">
-                    <button type="submit" name="deletePortId" class="btn btn-danger btn-sm"
-                            th:value="${postView.portId}">Delete
+                    <button type="submit" name="deleteId" class="btn btn-danger btn-sm"
+                            th:value="${postView.id}">Delete
                     </button>
                 </div>
             </form>
-            <form th:action="@{/portfolio/edit/{id}(id=${postView.portId})}" method="get" role="form" class="d-inline">
+            <form th:action="@{/portfolio/edit/{id}(id=${postView.id})}" method="get" role="form" class="d-inline">
                 <div class="col text-center">
-                    <button type="submit" th:name="${editPortId}" class="btn btn-default btn-sm"
-                            th:value="${postView.portId}">Edit
+                    <button type="submit" th:name="${id}" class="btn btn-default btn-sm"
+                            th:value="${postView.id}">Edit
                     </button>
                 </div>
             </form>

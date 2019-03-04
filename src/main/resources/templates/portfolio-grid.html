@@ -14,23 +14,23 @@
                 <div class="row">
                     <div th:each="project : ${portfolio}" class="text-center col-lg-4 col-md-6 ">
                         <div class="card view view-tenth text-center">
-                            <a th:href="@{/portfolio/{portId}(portId = ${project.portId})}"><img
-                                    th:src="${'/portfolio-images/' + project.getPortImage()}" class=" card-img-bottom"
+                            <a th:href="@{/portfolio/{id}(id = ${project.id})}"><img
+                                    th:src="${'/portfolio-images/' + project.getImage()}" class=" card-img-bottom"
                                     alt="img"/></a>
                             <!--<div class=" card-body ">-->
-                            <h2><a th:href="@{/portfolio/{portId}(portId = ${project.portId})}"></a><span
-                                    th:text="${project.portTitle}"/></h2>
+                            <h2><a th:href="@{/portfolio/{id}(id = ${project.id})}"></a><span
+                                    th:text="${project.title}"/></h2>
                             <p class="text-truncate d-inline-block " style="max-width: 350px;"><a
-                                    th:href="@{/portfolio/{portId}(portId = ${project.portId})}"></a><span
-                                    th:text="${project.portBody}"/></p>
+                                    th:href="@{/portfolio/{id}(id = ${project.id})}"></a><span
+                                    th:text="${project.body}"/></p>
                         </div>
                     </div>
                     <!--Button to create another project-->
                     <div class=" text-center col-lg-4 col-md-6">
                         <div class="card view view-tenth text-center">
-                            <a th:href="@{/posts/create}"><img th:src="@{~/images/add.png}" class="card-img-bottom"
+                            <a th:href="@{/portfolio/create}"><img th:src="@{~/images/add.png}" class="card-img-bottom"
                                                                alt="add"/></a>
-                            <h2 class="text-truncate d-inline-block">Add another Post</h2>
+                            <h2 class="text-truncate d-inline-block">Add another Project</h2>
                         </div>
                     </div>
                 </div>

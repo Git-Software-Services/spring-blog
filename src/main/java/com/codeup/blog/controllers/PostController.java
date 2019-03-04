@@ -75,7 +75,6 @@ private String uploadPath;
 
     @PostMapping("/posts/edit/{id}")
     public String editPost(@PathVariable int id, @ModelAttribute Post post, @RequestParam(name="file") MultipartFile uploadedFile, Model model) {
-//        Util.upperCasedTitle(post.getTitle());
         String filename = uploadedFile.getOriginalFilename();
         String filepath = Paths.get(uploadPath, filename).toString();
         File destinationFile = new File(filepath);

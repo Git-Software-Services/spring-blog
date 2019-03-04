@@ -8,75 +8,74 @@ import javax.persistence.*;
 
         @Id
         @GeneratedValue
-        private int portId;
+        private int id;
 
         @Column(nullable = false, length =512)
-        private String portTitle;
+        private String title;
 
-        @Lob
-        @Column(nullable = false, columnDefinition="BLOB")
-        private String portBody;
+        @Column(nullable = false, columnDefinition="TEXT")
+        private String body;
 
         @Column
-        private String portImage;
+        private String image;
 
 
-        public int getPortId() {
-            return portId;
+        public int getId() {
+            return id;
         }
 
-        public void setPortId(int portId) {
-            this.portId = portId;
+        public void setId(int id) {
+            this.id = id;
         }
 
-        public String getPortTitle() {
-            return portTitle;
+        public String getTitle() {
+            return title;
         }
 
-        public void setPortTitle(String portTitle) {
-            this.portTitle = portTitle;
+        public void setTitle(String title) {
+            this.title = title;
         }
 
-        public String getPortBody() {
-            return portBody;
+        public String getBody() {
+            return body;
         }
 
-        public void setPortBody(String portBody) {
-            this.portBody = portBody;
+        public void setBody(String body) {
+            this.body = body;
         }
 
-        public String getPortImage() {
-            return portImage;
+        public String getImage() {
+            return image;
         }
 
-        public void setPortImage(String portImage) {
-            this.portImage = portImage;
+        public void setImage(String image) {
+            this.image = image;
         }
 
         public Portfolio(){}
 
-        public Portfolio(int portId, String portTitle, String portBody) {
-            this.portId = portId;
-            this.portTitle = portTitle;
-            this.portBody = portBody;
+        public Portfolio(int id, String title, String body) {
+            this.id = id;
+            this.title = title;
+            this.body = body;
         }
 
-        public Portfolio(String portTitle, String portBody) {
-            this.portTitle = portTitle;
-            this.portBody = portBody;
+        public Portfolio(String title, String body) {
+            this.title = title;
+            this.body = body;
         }
 
-        public Portfolio(String portTitle, String portBody, String portImage) {
-            this.portTitle = portTitle;
-            this.portBody = portBody;
-            this.portImage = portImage;
+        public Portfolio(String title, String body, String image) {
+            this.title = title;
+            this.body = body;
+            this.image = image;
         }
 
-        public Portfolio(int portId, String portTitle, String portBody, String portImage) {
-            this.portId = portId;
-            this.portTitle = portTitle;
-            this.portBody = portBody;
-            this.portImage = portImage;
+        public Portfolio(int id, String title, String body, String image) {
+            this.id = id;
+            this.title = title;
+            this.body = body;
+            this.image = image;
         }
 
 

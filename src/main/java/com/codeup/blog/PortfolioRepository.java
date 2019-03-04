@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface PortfolioRepository extends CrudRepository <Portfolio, Integer> {
     Portfolio save(Portfolio portfolio);
-    Portfolio findByPortId(int portId);
-    void delete(int portId);
+    Portfolio findById(int id);
+    void delete(int id);
 }
 

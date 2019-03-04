@@ -7,21 +7,21 @@
     <h2 class="mb-30 pt-5 text-center">EDIT THE PROJECT</h2>
     <div class="col-lg-12 paddsection">
         <div class="row justify-content-center">
-            <form th:action="@{/portfolio/edit/{id}(id=${portfolio.portId})}" th:object="${portfolio}"
+            <form th:action="@{/portfolio/edit/{id}(id=${portfolio.id})}" th:object="${portfolio}"
                   enctype="multipart/form-data"
                   method="post" role="form">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group contact-block1">
-                            <input th:field="*{portTitle}" type="text" class="form-control" id="title"
+                            <input th:field="*{title}" type="text" class="form-control" id="title"
                                    placeholder="Blog Title"
-                                   th:value="${portfolio.portTitle}" data-rule="required"
+                                   th:value="${portfolio.title}" data-rule="required"
                                    data-msg="Please enter the title of your blog post"/>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
-                        <textarea th:text="${portfolio.portBody}" class="form-control" th:field="*{portBody}" rows="12"
+                        <textarea th:text="${portfolio.body}" class="form-control" th:field="*{body}" rows="12"
                                   data-rule="required"
                                   data-msg="Enter your content" placeholder="Blog Content"></textarea>
                         </div>

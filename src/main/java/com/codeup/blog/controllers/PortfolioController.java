@@ -26,9 +26,9 @@ public class PortfolioController {
         return "portfolio-grid";
     }
 
-    @GetMapping("/portfolio/{portId}")
-    public String viewPortfolio(@PathVariable("portId") int portId, Model model){
-        Portfolio postView = portfolioDao.findByPortId(portId);
+    @GetMapping("/portfolio/{id}")
+    public String viewPortfolio(@PathVariable("id") int id, Model model){
+        Portfolio postView = portfolioDao.findById(id);
         model.addAttribute("postView", postView);
         return "portfolio-single";
     }
@@ -54,20 +54,20 @@ private String uploadPort;
             e.printStackTrace();
             model.addAttribute("message", "Oops! Something went wrong! " + e);
         }
-        portfolio.setPortImage(filename);
+        portfolio.setImage(filename);
         portfolioDao.save(portfolio);
         return "redirect:/portfolio";
     }
 
-    @GetMapping("/portfolio/edit/{portId}")
-    public String editPostForm(@PathVariable("portId") int portId, Model model){
-        Portfolio portfolio = portfolioDao.findOne(portId);
+    @GetMapping("/portfolio/edit/{id}")
+    public String editPostForm(@PathVariable("id") int id, Model model){
+        Portfolio portfolio = portfolioDao.findOne(id);
         model.addAttribute("portfolio", portfolio);
         return "edit-portfolio-single";
     }
 
-    @PostMapping("/portfolio/edit/{portId}")
-    public String editPost(@PathVariable("portId") int portId, @ModelAttribute Portfolio portfolio, @RequestParam(name="file") MultipartFile uploadedFile, Model model) {
+    @PostMapping("/portfolio/edit/{id}")
+    public String editPost(@PathVariable("id") int id, @ModelAttribute Portfolio portfolio, @RequestParam(name="file") MultipartFile uploadedFile, Model model) {
 //        Util.upperCasedTitle(post.getTitle());
         String filename = uploadedFile.getOriginalFilename();
         String filepath = Paths.get(uploadPort, filename).toString();
@@ -80,14 +80,14 @@ private String uploadPort;
             e.printStackTrace();
             model.addAttribute("message", "Oops! Something went wrong! " + e);
         }
-        portfolio.setPortImage(filename);
+        portfolio.setImage(filename);
         portfolioDao.save(portfolio);
-        return "redirect:/portfolio/" + portId;
+        return "redirect:/portfolio/" + id;
     }
 
     @PostMapping("/portfolio/delete")
-    public String deletePortfolio(@RequestParam int deletePortId) {
-        portfolioDao.delete(deletePortId);
+    public String deletePortfolio(@RequestParam int deleteId) {
+        portfolioDao.delete(deleteId);
         return "redirect:/portfolio";
     }
 }
