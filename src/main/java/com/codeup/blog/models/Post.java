@@ -27,33 +27,39 @@ public class Post {
    private String image;
 
 
+@ManyToOne @JoinColumn (name = "user_id")
+    private User user;
 
 
-
-    public Post(int id, String title, String body) {
+    public Post(int id, String title, String body, User user) {
         this.id = id;
         this.title = title;
         this.body = body;
+        this.user = user;
     }
 
-    public Post(String title, String body) {
+    public Post(String title, String body, User user) {
         this.title = title;
         this.body = body;
+        this.user = user;
     }
 
-    public Post(String title, String body, String quote, String author, String image) {
+    public Post(String title, String body, String quote, String author, String image, User user) {
         this.title = title;
         this.body = body;
         this.quote = quote;
         this.author = author;
         this.image = image;
+        this.user = user;
     }
 
-    public Post(String title, String body, String quote, String author) {
+
+    public Post(String title, String body, String quote, String author, User user) {
         this.title = title;
         this.body = body;
         this.quote = quote;
         this.author = author;
+        this.user = user;
     }
 
     public Post(){}
@@ -103,6 +109,14 @@ public class Post {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

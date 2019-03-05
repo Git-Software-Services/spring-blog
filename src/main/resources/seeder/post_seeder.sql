@@ -44,3 +44,6 @@ We used Maven to manage all the dependencies for the project.
 Passwords are properly handled using hash and salt methods and prepared statements are used to avoid SQL injections.', 'The Mentor-Lister Project', 'adlister_proj.png'),
 
 ('Satya Yoga Trips is a small side project I took on for my wife,my favorite client. I found a template that she liked and tailored it to fit her brand. I connected email service, paypal to accept payments and connected the domain and local site to a hosting service and secured the SSL certificate. I provide ongoing services to assist in making changes to the website when needed. Future plans involve migrating the site over to a CMS I create, much like this one, to enable her to create and update her own content.', 'The SYT Project', 'satya_proj.png'),
+
+insert into users(username, email, password)values
+('dorian', 'dorian@email.com', 'password'),

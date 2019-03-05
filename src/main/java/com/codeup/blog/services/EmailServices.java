@@ -20,8 +20,8 @@ public class EmailServices {
     public void prepareAndSend(Post post, String subject, String body) {
         SimpleMailMessage msg = new SimpleMailMessage();
         msg.setFrom(from);
-        msg.setTo("user@myPage.com");
-//        msg.setTo(post.getUser().getEmail());
+//        msg.setTo("user@myPage.com");
+        msg.setTo(post.getUser().getEmail());
         msg.setSubject(subject);
         msg.setText(body);
         //more options available here. msg.s....

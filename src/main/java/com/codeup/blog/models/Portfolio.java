@@ -2,7 +2,7 @@ package com.codeup.blog.models;
 
 import javax.persistence.*;
 
-    @Entity
+@Entity
     @Table(name="projects")
     public class Portfolio {
 
@@ -20,7 +20,21 @@ import javax.persistence.*;
         private String image;
 
 
-        public int getId() {
+    @ManyToOne @JoinColumn (name = "user_id")
+    private User user;
+
+
+
+
+//    public List getImages() {
+//        return images;
+//    }
+//
+//    public void setImages(List<PostImage> images) {
+//        this.images = images;
+//    }
+
+    public int getId() {
             return id;
         }
 
@@ -60,23 +74,27 @@ import javax.persistence.*;
             this.body = body;
         }
 
-        public Portfolio(String title, String body) {
+        public Portfolio(String title, String body, User user) {
             this.title = title;
             this.body = body;
+            this.user = user;
         }
 
-        public Portfolio(String title, String body, String image) {
+        public Portfolio(String title, String body, String image, User user) {
             this.title = title;
             this.body = body;
             this.image = image;
+            this.user = user;
         }
 
-        public Portfolio(int id, String title, String body, String image) {
+        public Portfolio(int id, String title, String body, String image, User user) {
             this.id = id;
             this.title = title;
             this.body = body;
             this.image = image;
+            this.user = user;
         }
+
 
 
     }

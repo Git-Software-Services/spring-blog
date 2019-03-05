@@ -1,7 +1,9 @@
 package com.codeup.blog.controllers;
 
 import com.codeup.blog.PostRepository;
+import com.codeup.blog.UserRepository;
 import com.codeup.blog.models.Post;
+import com.codeup.blog.models.User;
 import com.codeup.blog.services.EmailServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,12 +19,16 @@ import java.nio.file.Paths;
 public class PostController {
 
     private final PostRepository postDao;
+    private final UserRepository userDao;
+
    @Autowired
    private EmailServices emailServices;
 
-    public PostController( PostRepository postDao){
+    public PostController( PostRepository postDao, UserRepository userDao){
         this.postDao = postDao;
+        this.userDao = userDao;
     }
+
     @GetMapping("/posts")
     public String allPosts(Model model){
         model.addAttribute("posts", postDao.findAll());
@@ -47,6 +53,10 @@ public class PostController {
         String filename = uploadedFile.getOriginalFilename();
         String filepath = Paths.get(uploadPath, filename).toString();
         File destinationFile = new File(filepath);
+
+
+        User user = userDao.findOne(1);
+        post.setUser(user);
 
         try {
             uploadedFile.transferTo(destinationFile);

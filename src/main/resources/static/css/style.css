@@ -122,6 +122,18 @@ p {
   text-transform: uppercase;
 }
 
+.nav-btn {
+  background: transparent;
+  border: black 1px solid;
+  border-radius: 0;
+  color: #333;
+  font-size: 12px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 30px;
+  text-transform: uppercase;
+}
+
 .btn:hover, .btn:focus {
   color: #fff;
 }
