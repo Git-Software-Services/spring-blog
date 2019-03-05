@@ -7,6 +7,7 @@ import com.codeup.blog.models.User;
 import com.codeup.blog.services.EmailServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -89,8 +90,8 @@ private String uploadPath;
         String filepath = Paths.get(uploadPath, filename).toString();
         File destinationFile = new File(filepath);
 
-        User user = userDao.findOne(1);
-        post.setUser(user);
+        User sessionUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User userDB = userDao.findOne(sessionUser.getId());
 
         try {
             uploadedFile.transferTo(destinationFile);
@@ -100,6 +101,7 @@ private String uploadPath;
             model.addAttribute("message", "Oops! Something went wrong! " + e);
         }
         post.setImage(filename);
+        post.setUser(userDB);
         postDao.save(post);
         return "redirect:/posts/" + id;
     }

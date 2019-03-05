@@ -27,6 +27,13 @@ public class User {
     private List<Portfolio> portfolios;
 
 
+    public User(User copy) {
+        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
+    }
+
     public User(){}
 
     public User(int id, String username, String email, String password) {
@@ -41,7 +48,7 @@ public class User {
         this.password = password;
     }
 
-    public int id() {
+    public int getId() {
         return id;
     }
 
