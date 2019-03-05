@@ -27,6 +27,7 @@
                         </div>
                     </form>
                 </div>
+            </div>
 
             <div class="row justify-content-center">
                 <div class="col-md-8 col-md-offset-2">
@@ -34,14 +35,16 @@
                         <div class="container-main single-main">
                             <div class="col-md-12">
                                 <div class="block-main mb-30">
-                                    <img th:src="${'/images/' + postView.getImage()}" class="img-responsive" alt="reviews2"/>
+                                    <img th:src="${'/images/' + postView.getImage()}" class="img-responsive"
+                                         alt="reviews2"/>
                                     <div class="content-main single-post padDiv">
                                         <div class="journal-txt row justify-content-center">
                                             <h4><span th:text="${postView.getTitle()}"></span></h4>
                                         </div>
                                         <div class="post-meta row justify-content-center">
                                             <ul class="list-unstyled mb-0">
-                                                <li class="author">by:<a href="#">Dorian</a></li>
+                                                <li class="author">by:<a href="#"><span
+                                                        th:text="${postView.getUser().getUsername()}"></span></a></li>
                                                 <li class="date">date:<a href="#">March 31, 2017</a></li>
                                             </ul>
                                         </div>
@@ -60,8 +63,9 @@
                 </div>
             </div>
         </div>
+
         <div class="row justify-content-center">
-            <form th:action="@{/posts/delete}" method="post"  role="form" class="d-inline">
+            <form th:action="@{/posts/delete}" method="post" role="form" class="d-inline">
                 <div class="col text-center">
                     <button type="submit" name="deleteId" class="btn btn-danger btn-sm"
                             th:value="${postView.id}">Delete

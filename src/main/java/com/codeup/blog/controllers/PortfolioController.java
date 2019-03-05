@@ -1,7 +1,9 @@
 package com.codeup.blog.controllers;
 
 import com.codeup.blog.PortfolioRepository;
+import com.codeup.blog.UserRepository;
 import com.codeup.blog.models.Portfolio;
+import com.codeup.blog.models.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,9 +17,11 @@ import java.nio.file.Paths;
 public class PortfolioController {
 
     private final PortfolioRepository portfolioDao;
+    private final UserRepository userDao;
 
-    public PortfolioController(PortfolioRepository portfolioDao){
+    public PortfolioController(PortfolioRepository portfolioDao, UserRepository userDao){
         this.portfolioDao = portfolioDao;
+        this.userDao = userDao;
     }
 
     @GetMapping("/portfolio")
@@ -47,6 +51,9 @@ private String uploadPort;
         String filepath = Paths.get(uploadPort, filename).toString();
         File destinationFile = new File(filepath);
 
+        User user = userDao.findOne(1);
+        portfolio.setUser(user);
+
         try {
             uploadedFile.transferTo(destinationFile);
             model.addAttribute("message", "File successfully uploaded!");
@@ -72,6 +79,9 @@ private String uploadPort;
         String filename = uploadedFile.getOriginalFilename();
         String filepath = Paths.get(uploadPort, filename).toString();
         File destinationFile = new File(filepath);
+
+        User user = userDao.findOne(1);
+        portfolio.setUser(user);
 
         try {
             uploadedFile.transferTo(destinationFile);

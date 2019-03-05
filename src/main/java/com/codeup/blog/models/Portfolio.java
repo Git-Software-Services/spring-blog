@@ -20,19 +20,11 @@ import javax.persistence.*;
         private String image;
 
 
+
     @ManyToOne @JoinColumn (name = "user_id")
     private User user;
 
 
-
-
-//    public List getImages() {
-//        return images;
-//    }
-//
-//    public void setImages(List<PostImage> images) {
-//        this.images = images;
-//    }
 
     public int getId() {
             return id;
@@ -94,6 +86,14 @@ import javax.persistence.*;
             this.image = image;
             this.user = user;
         }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
 
 

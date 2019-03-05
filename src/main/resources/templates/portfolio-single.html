@@ -46,7 +46,8 @@
                                         </div>
                                         <div class="post-meta row justify-content-center">
                                             <ul class="list-unstyled mb-0">
-                                                <li class="author">by:<a href="#">Dorian Wallace</a></li>
+                                                <li class="author">by:<a href="#"><span
+                                                        th:text="${postView.getUser().getUsername()}"></span></a></li>
                                                 <li class="date">date:<a href="#">March 31, 2017</a></li>
                                             </ul>
                                         </div>
@@ -58,7 +59,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
         <div class="row justify-content-center">
             <form th:action="@{/portfolio/delete}" method="post" role="form"
                   class="d-inline">

@@ -89,6 +89,9 @@ private String uploadPath;
         String filepath = Paths.get(uploadPath, filename).toString();
         File destinationFile = new File(filepath);
 
+        User user = userDao.findOne(1);
+        post.setUser(user);
+
         try {
             uploadedFile.transferTo(destinationFile);
             model.addAttribute("message", "File successfully uploaded!");

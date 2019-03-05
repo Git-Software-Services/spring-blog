@@ -11,9 +11,17 @@
                   method="post" role="form">
                 <div class="row">
 
+                    <!--<div class="col-lg-12">-->
+                        <!--<div class="form-group contact-block1">-->
+                            <!--<input th:field="*{image}" type="hidden" id="oldImage"-->
+                                   <!--th:value="${post.image}"-->
+                                   <!--/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
                     <div class="col-lg-12">
                         <div class="form-group contact-block1">
-                            <input th:field="*{title}" type="text" class="form-control" id="title"
+                            <input th:field="*{title}" type="text" class="form-control create-form-control" id="title"
                                    placeholder="Blog Title"
                                    th:value="${post.title}" data-rule="required"
                                    data-msg="Please enter the title of your blog post"/>
@@ -22,7 +30,7 @@
 
                     <div class="col-lg-12">
                         <div class="form-group">
-                        <textarea th:text="${post.quote}" class="form-control" th:field="*{quote}" style="resize:none;"
+                        <textarea th:text="${post.quote}" class="form-control create-form-control" th:field="*{quote}" style="resize:none;"
                                   rows="6" data-rule="required"
                                   data-msg="Enter a quote" placeholder="Enter a quote"></textarea>
                         </div>
@@ -30,7 +38,7 @@
 
                     <div class="col-lg-12">
                         <div class="form-group contact-block1">
-                            <input type="text" th:field="*{author}" class="form-control" id="author"
+                            <input type="text" th:field="*{author}" class="form-control create-form-control" id="author"
                                    placeholder="Author Name"
                                    th:value="${post.author}" data-rule="required"
                                    data-msg="Please enter the author's name"/>
@@ -39,7 +47,7 @@
 
                     <div class="col-lg-12">
                         <div class="form-group">
-                        <textarea th:text="${post.body}" class="form-control" th:field="*{body}" rows="12"
+                        <textarea th:text="${post.body}" class="form-control create-form-control" th:field="*{body}" rows="12"
                                   data-rule="required"
                                   data-msg="Enter your content" placeholder="Blog Content"></textarea>
                         </div>
