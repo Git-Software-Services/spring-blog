@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="fragment/header :: header('Blogs')"></head>
 <body>
     <div th:replace="fragment/navbar :: navbar"></div>
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <!--Button to create another project-->
-                    <div class=" text-center col-lg-4 col-md-6">
+                    <div sec:authorize="isAuthenticated()" class=" text-center col-lg-4 col-md-6">
                         <div class="card view view-tenth text-center">
                             <a th:href="@{/posts/create}"><img th:src="@{~/img/add.png}" class="card-img-bottom"
                                                                alt="add"/></a>

@@ -64,7 +64,7 @@
             </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div sec:authorize="isAuthenticated()" class="row justify-content-center">
             <form th:action="@{/posts/delete}" method="post" role="form" class="d-inline">
                 <div class="col text-center">
                     <button type="submit" name="deleteId" class="btn btn-danger btn-sm"
