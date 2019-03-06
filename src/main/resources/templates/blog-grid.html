@@ -14,7 +14,7 @@
                 <div class="row">
                     <div th:each="post : ${posts}" class="text-center col-lg-4 col-md-6 pb-4">
                         <div class="card view view-tenth text-center">
-                            <a th:href="@{/posts/{id}(id = ${post.id})}"><img th:src="${'/images/' + post.getImage()}"
+                            <a th:href="@{/posts/{id}(id = ${post.id})}"><img th:src="${'/img/' + post.getImage()}"
                                                                               class="card-img-bottom"
                                                                               alt="img"/></a>
                             <h2><a th:href="@{/posts/{id}(id = ${post.id})}"></a><span th:text="${post.title}"/>
@@ -28,7 +28,7 @@
                     <!--Button to create another project-->
                     <div class=" text-center col-lg-4 col-md-6">
                         <div class="card view view-tenth text-center">
-                            <a th:href="@{/posts/create}"><img th:src="@{~/images/add.png}" class="card-img-bottom"
+                            <a th:href="@{/posts/create}"><img th:src="@{~/img/add.png}" class="card-img-bottom"
                                                                alt="add"/></a>
                             <h2 class="">Add another Post</h2>
                         </div>
