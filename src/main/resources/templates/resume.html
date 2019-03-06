@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragment/header :: header('Resume')"/>
+<body>
+    <div th:replace="fragment/navbar :: navbar"></div>
+    <!-- start section main content -->
+    <div class="main-content paddsection">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-info alert-dismissible fade show mb-5" role="alert">
+                                <p class="mb-0 mt-0 text-center">Click on the company names to be redirected to the websites. <br />For a list of my projects please got to my <a
+                                        th:href="@{/portfolio}" class="alert-link">Portfolio page</a>.</p>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <p class="pb-2">My curious nature led me to software development where I thrive naturally. I
+                                enjoy
+                                combining logic with complex design and managing the various milestones that accompany
+                                team projects.</p>
+                            <p>I am in awe of the impact technology has on the world and I take great
+                                pleasure in being a part of the creation.</p>
+
+                            <hr/>
+                            <h2>Technical Skills</h2>
+                            <p class="text-center"><strong>HTML - CSS - Bootstrap - Javascript - jQuery - Java - Spring
+                                Boot - MySQL - Git</strong></p>
+                            <hr/>
+                            <h2>Military Experience</h2>
+                            <p class="lead">US Army, 06/2002 to 06/2006</p>
+                            <p class="mb-1">Provided specialist work with battlefield signal support systems and
+                                terminal devices for the Army during and after Operation Iraqi Freedom.</p>
+                            <p class="mb-5">Secret Security Clearance (Lapsed)</p>
+
+                            <hr/>
+                            <h2>Professional Experience</h2>
+                            <p class="lead mb-2">Technologist Intern, 07/2018 to 10/2018</p>
+                            <h4><a th:href="@{/https://www.essrocks.io}" >Elegant Software Solutions</a></h4>
+                            <p class="mb-5">An internship program that specialized in highly focused, immersive training
+                                centered on language fluency, object-oriented
+                                programming, and project-based learning. </p>
+                            <p class="lead mb-2">Cafe Manager, 04/2018 to 07/2018</p>
+                            <h4><a th:href="@{/https://38juice.com}" >3:8 Juice and Eatery</a></h4>
+                            <p class="mb-5">I took the knowledge I received in culinary school and expanded my talent
+                                for creating great cuisine into a position where I managed a handful of employees while
+                                running the day-to-day operations of a small cafe.</p>
+                            <p class="lead mb-2">Assistant Manager, 04/2015 to 03/2018</p>
+                            <h4><a th:href="@{/https://www.lifetime.life/life-cafe.html}" >LifeTime Fitness Life Cafe</a></h4>
+                            <p class="mb-5"> I assisted in managing and overseeing the café with the Café Manager. I
+                                managed keeping costs at a minimum, training and developing staff, maintaining
+                                cleanliness, and executing recipes to standard.</p>
+                            <p class="lead mb-2"> Field Service Engineer, 11/2006 to 06/2014</p>
+                            <h4 >Government Contracting</h4>
+                            <p class="mb-5"> I traveled to different bases in Afghanistan, Iraq and Kuwait providing
+                                onsite installations and repairs of counter-electronic warfare systems for various
+                                government clients and branches of the military.</p>
+                            <hr/>
+                            <h2>Education</h2>
+                            <p class="lead"><a th:href="@{/https://codeup.com/}" >Codeup,</a> 11/2018 to 04/2019</p>
+                            <p>Codeup is a fully-immersive, project-based, and intensive 18 week full stack Java career
+                                accelerator that provides students with 600+ hours of expert instruction in software
+                                development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="fragment/footer :: footer"></div>
+</body>
+</html>

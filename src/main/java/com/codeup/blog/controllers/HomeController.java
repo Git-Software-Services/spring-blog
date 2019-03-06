@@ -15,9 +15,13 @@ public class HomeController {
     }
 
     @GetMapping("/")
-    @ResponseBody
     public String landingPage() {
-        return "This is the landing page";
+        return "index";
+    }
+
+    @GetMapping("/resume")
+    public String showResume() {
+        return "resume";
     }
 
     @PostMapping("/hello")

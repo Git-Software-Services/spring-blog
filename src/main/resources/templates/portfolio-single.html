@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="fragment/header :: header('My-Project')"/>
+<body>
+    <div th:replace="fragment/navbar :: navbar"></div>
+    <!-- start section main content -->
+    <div class="main-content paddsection">
+        <div class="container">
+
+            <div class="row justify-content-between">
+                <div class="">
+                    <form th:action="@{/portfolio}" method="get" role="form"
+                          class="">
+                        <div class=" text-center">
+                            <button type="submit" class=" nav-btn btn-sm"
+                                    th:value="${postView.id}">Back
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="float-right ">
+                    <form th:action="@{/}" method="get" role="form">
+                        <div class=" text-center">
+                            <button type="submit" class="nav-btn btn-sm">Home
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="row justify-content-center">
+
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="row">
+                        <div class="container-main single-main">
+                            <div class="col-md-12">
+                                <div class="block-main mb-30">
+                                    <img th:src="${'/portfolio-images/' + postView.getImage()}" class="img-fit"
+                                         alt="reviews2"/>
+                                    <div class="content-main single-post padDiv">
+                                        <div class="journal-txt row justify-content-center pb-3">
+                                            <h4><span th:text="${postView.getTitle()}"></span></h4>
+                                        </div>
+                                        <div class="post-meta row justify-content-center">
+                                            <ul class="list-unstyled mb-0">
+                                                <li class="author">by:<a href="#"><span
+                                                        th:text="${postView.getUser().getUsername()}"></span></a></li>
+                                                <li class="date">date:<a href="#"><span th:text="${#calendars.format(#calendars.createNow(), 'dd MMM yyyy')}"></span></a></li>
+                                            </ul>
+                                        </div>
+                                        <p><span th:text="${postView.getBody()}"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+        <div class="row justify-content-center">
+            <form th:action="@{/portfolio/delete}" method="post" role="form"
+                  class="d-inline">
+                <div class="col text-center">
+                    <button type="submit" name="deleteId" class="btn btn-danger btn-sm"
+                            th:value="${postView.id}">Delete
+                    </button>
+                </div>
+            </form>
+            <form th:action="@{/portfolio/edit/{id}(id=${postView.id})}" method="get" role="form" class="d-inline">
+                <div class="col text-center">
+                    <button type="submit" th:name="${id}" class="btn btn-default btn-sm"
+                            th:value="${postView.id}">Edit
+                    </button>
+                </div>
+            </form>
+            <div class="paddsection"></div>
+            <div class="paddsection"></div>
+        </div>
+    </div>
+    <div th:replace="fragment/footer :: footer"></div>
+</body>
+</html>>

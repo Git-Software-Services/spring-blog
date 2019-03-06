@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragment/header :: header('Blogs')"></head>
+<body>
+    <div th:replace="fragment/navbar :: navbar"></div>
+    <!-- start section journal -->
+    <div id="journal-blog" class="text-left  paddsections">
+        <div class="container text-center">
+            <h2>Notes</h2>
+        </div>
+        <hr/>
+        <div class="container paddsection">
+            <div class="journal-block">
+                <div class="row">
+                    <div th:each="post : ${posts}" class="text-center col-lg-4 col-md-6 pb-4">
+                        <div class="card view view-tenth text-center">
+                            <a th:href="@{/posts/{id}(id = ${post.id})}"><img th:src="${'/images/' + post.getImage()}"
+                                                                              class="card-img-bottom"
+                                                                              alt="img"/></a>
+                            <h2><a th:href="@{/posts/{id}(id = ${post.id})}"></a><span th:text="${post.title}"/>
+                            </h2>
+                            <p class="text-truncate col-lg-4 col-md-6 col-lg-12"><a
+                                    th:href="@{/posts/{id}(id = ${post.id})}"></a><span
+                                    th:text="${post.body}"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <!--Button to create another project-->
+                    <div class=" text-center col-lg-4 col-md-6">
+                        <div class="card view view-tenth text-center">
+                            <a th:href="@{/posts/create}"><img th:src="@{~/images/add.png}" class="card-img-bottom"
+                                                               alt="add"/></a>
+                            <h2 class="">Add another Post</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="paddsection"></div>
+    <!-- End section journal -->
+    <div th:replace="fragment/footer :: footer" class="shadow"></div>
+</body>
+</html>
