@@ -11,7 +11,7 @@ insert into projects(body, title, image, user_id)values
 
 The instructions were simply to build a single page movie application (SPA) that would allow users to add, edit, and delete movies, as well as rate them. We used a json-server to mock a database and our backend, so that we could just worry about the front end and AJAX requests.
 
-Once my partner and I had the functionality in place, I took it a step further by connecting to The Movie DataBase API to display images, trailers, overviews and titles for all movies.
+Once my partner and I had the functionality in place, I took it a step further by connecting to The Movie DataBase API to display img, trailers, overviews and titles for all movies.
 
 I used bootstrap to style the application, and made sure to use enough white space so that the layout remained simple and clean.', 'The Movie Project', 'movie_proj.png', 1),
 

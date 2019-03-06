@@ -1424,7 +1424,7 @@
 	};
 
 	/**
-	 * Preloads images with auto width.
+	 * Preloads img with auto width.
 	 * @todo Replace by a more generic approach
 	 * @protected
 	 */
@@ -2064,7 +2064,7 @@
 		});
 
 		// Autoresize the height of the carousel when window is resized
-		// When carousel has images, the height is dependent on the width
+		// When carousel has img, the height is dependent on the width
 		// and should also change on resize
 		$(window).resize(function() {
 			if (refThis._core.settings.autoHeight) {
@@ -2330,7 +2330,7 @@
 		}
 
 		if (video.type === 'youtube') {
-			path = "//img.youtube.com/vi/" + video.id + "/hqdefault.jpg";
+			path = "//pics.youtube.com/vi/" + video.id + "/hqdefault.jpg";
 			create(path);
 		} else if (video.type === 'vimeo') {
 			$.ajax({

@@ -125,7 +125,7 @@ $(document).ready(function() {
     // ========================================================================= //
 
     var magnifPopup = function() {
-        $('.popup-img').magnificPopup({
+        $('.popup-pics').magnificPopup({
             type: 'image',
             removalDelay: 300,
             mainClass: 'mfp-with-zoom',
