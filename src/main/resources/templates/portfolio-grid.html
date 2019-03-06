@@ -15,7 +15,7 @@
                     <div th:each="project : ${portfolio}" class="text-center col-lg-4 col-md-6 pb-4">
                         <div class="card view view-tenth text-center">
                             <a th:href="@{/portfolio/{id}(id = ${project.id})}"><img
-                                    th:src="${'/img/' + project.getImage()}" class=" card-img-bottom"
+                                    th:src="${'/img' + project.getImage()}" class=" card-img-bottom"
                                     alt="img"/></a>
                             <!--<div class=" card-body ">-->
                             <h2><a th:href="@{/portfolio/{id}(id = ${project.id})}"></a><span
