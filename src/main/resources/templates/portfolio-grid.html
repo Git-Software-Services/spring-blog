@@ -6,21 +6,21 @@
     <!-- start section journal -->
     <div id="journal-blog" class="text-left  paddsections">
         <div class="container text-center">
-            <h2>Work</h2>
+            <h2>Projects</h2>
         </div>
         <hr/>
         <div class="container paddsection">
             <div class="journal-block">
                 <div class="row">
-                    <div th:each="project : ${portfolio}" class="text-center col-lg-4 col-md-6 ">
+                    <div th:each="project : ${portfolio}" class="text-center col-lg-4 col-md-6 pb-4">
                         <div class="card view view-tenth text-center">
                             <a th:href="@{/portfolio/{id}(id = ${project.id})}"><img
                                     th:src="${'/portfolio-images/' + project.getImage()}" class=" card-img-bottom"
                                     alt="img"/></a>
                             <!--<div class=" card-body ">-->
                             <h2><a th:href="@{/portfolio/{id}(id = ${project.id})}"></a><span
-                                    th:text="${project.title}"/></h2>
-                            <p class="text-truncate d-inline-block " style="max-width: 350px;"><a
+                                    th:text="${project.title}"></span></h2>
+                            <p class="text-truncate col-lg-4 col-md-6 col-lg-12"><a
                                     th:href="@{/portfolio/{id}(id = ${project.id})}"></a><span
                                     th:text="${project.body}"/></p>
                         </div>
@@ -30,7 +30,7 @@
                         <div class="card view view-tenth text-center">
                             <a th:href="@{/portfolio/create}"><img th:src="@{~/images/add.png}" class="card-img-bottom"
                                                                alt="add"/></a>
-                            <h2 class="text-truncate d-inline-block">Add another Project</h2>
+                            <h2 class="">Add another Project</h2>
                         </div>
                     </div>
                 </div>

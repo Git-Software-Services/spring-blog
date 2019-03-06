@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="fragment/header :: header('Blog-Post')"/>
 <body>
     <div th:replace="fragment/navbar :: navbar"></div>
@@ -38,14 +38,14 @@
                                     <img th:src="${'/images/' + postView.getImage()}" class="img-responsive"
                                          alt="reviews2"/>
                                     <div class="content-main single-post padDiv">
-                                        <div class="journal-txt row justify-content-center">
+                                        <div class="journal-txt row justify-content-center pb-3">
                                             <h4><span th:text="${postView.getTitle()}"></span></h4>
                                         </div>
                                         <div class="post-meta row justify-content-center">
                                             <ul class="list-unstyled mb-0">
                                                 <li class="author">by:<a href="#"><span
                                                         th:text="${postView.getUser().getUsername()}"></span></a></li>
-                                                <li class="date">date:<a href="#">March 31, 2017</a></li>
+                                                <li class="date">date:<a href="#"><span th:text="${#calendars.format(#calendars.createNow(), 'dd MMM yyyy')}"></span></a></li>
                                             </ul>
                                         </div>
                                         <p><span th:text="${postView.getBody()}"></span></p>
@@ -64,7 +64,7 @@
             </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div sec:authorize="isAuthenticated()" class="row justify-content-center">
             <form th:action="@{/posts/delete}" method="post" role="form" class="d-inline">
                 <div class="col text-center">
                     <button type="submit" name="deleteId" class="btn btn-danger btn-sm"

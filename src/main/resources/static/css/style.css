@@ -300,6 +300,9 @@ nav ul li a {
   width: 100vw;
 }
 
+.fill-login {
+  height: 100vh;
+}
 
 #header .header-content {
   margin-left: 3em;
@@ -787,12 +790,17 @@ nav ul li a {
 }
 
 .view {
-  float: left;
+  /*float: left;*/
   overflow: hidden;
   position: relative;
   text-align: center;
 
   cursor: default;
+}
+
+.text-truncate,
+.d-inline-block {
+  text-align:center!important;
 }
 
 .view .mask,
