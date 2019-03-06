@@ -56,8 +56,8 @@ public class PostController {
         File destinationFile = new File(filepath);
 
 
-        User user = userDao.findOne(1);
-        post.setUser(user);
+        User sessionUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User userDB = userDao.findOne(sessionUser.getId());
 
         try {
             uploadedFile.transferTo(destinationFile);
@@ -67,6 +67,7 @@ public class PostController {
             model.addAttribute("message", "Oops! Something went wrong! " + e);
         }
         post.setImage(filename);
+        post.setUser(userDB);
         postDao.save(post);
         emailServices.prepareAndSend(post, "Post created", "the post was created successfully with the id" + post.getId());
 

@@ -5,6 +5,7 @@ import com.codeup.blog.UserRepository;
 import com.codeup.blog.models.Portfolio;
 import com.codeup.blog.models.User;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -51,8 +52,8 @@ private String uploadPort;
         String filepath = Paths.get(uploadPort, filename).toString();
         File destinationFile = new File(filepath);
 
-        User user = userDao.findOne(1);
-        portfolio.setUser(user);
+        User sessionUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User userDB = userDao.findOne(sessionUser.getId());
 
         try {
             uploadedFile.transferTo(destinationFile);
@@ -62,6 +63,7 @@ private String uploadPort;
             model.addAttribute("message", "Oops! Something went wrong! " + e);
         }
         portfolio.setImage(filename);
+        portfolio.setUser(userDB);
         portfolioDao.save(portfolio);
         return "redirect:/portfolio";
     }
@@ -80,8 +82,8 @@ private String uploadPort;
         String filepath = Paths.get(uploadPort, filename).toString();
         File destinationFile = new File(filepath);
 
-        User user = userDao.findOne(1);
-        portfolio.setUser(user);
+        User sessionUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User userDB = userDao.findOne(sessionUser.getId());
 
         try {
             uploadedFile.transferTo(destinationFile);
@@ -91,6 +93,7 @@ private String uploadPort;
             model.addAttribute("message", "Oops! Something went wrong! " + e);
         }
         portfolio.setImage(filename);
+        portfolio.setUser(userDB);
         portfolioDao.save(portfolio);
         return "redirect:/portfolio/" + id;
     }
