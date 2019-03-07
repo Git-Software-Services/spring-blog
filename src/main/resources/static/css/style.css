@@ -342,6 +342,7 @@ nav ul li a {
 }
 
 .dorianBubble {
+  border: 2px solid #754CBC;
   font-family: "freight-text-pro", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -363,6 +364,7 @@ nav ul li a {
 }
 
 .dorianBubble:after {
+
     content: "";
     position: absolute;
     bottom: -13px;
@@ -375,6 +377,8 @@ nav ul li a {
 }
 
 .dorianBubble1 {
+  border: 2px solid #754CBC;
+
   font-family: "freight-text-pro", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -879,7 +883,7 @@ nav ul li a {
   width: 100%;
   bottom: 0px;
   text-transform: uppercase;
-  font-weight: 600;
+  /*font-weight: 600;*/
   color:black;
   font-size: 13px;
   text-align: center;
