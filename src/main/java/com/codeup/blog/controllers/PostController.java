@@ -81,7 +81,7 @@ public class PostController {
         return "edit-blog-single";
     }
 
-    @Value("/srv/dorianlwallace.com/public")
+    @Value("${file-upload-path}")
 private String uploadPath;
 
 
