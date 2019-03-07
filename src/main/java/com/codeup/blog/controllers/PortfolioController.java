@@ -43,7 +43,7 @@ public class PortfolioController {
         model.addAttribute("portfolio", new Portfolio());
         return "create-portfolio-single";
     }
-@Value("${file-upload-port}")
+@Value("${/srv/dorianlwallace.com/public}")
 private String uploadPort;
 
     @PostMapping("/portfolio/create")
