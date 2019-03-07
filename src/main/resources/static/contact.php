@@ -10,13 +10,13 @@ function isEmail($email) {
 if (!defined("PHP_EOL")) define("PHP_EOL", "\r\n");
 
 //$fname     = $_POST['fname'];
-$name     = $_POST['name'];
+$fname     = $_POST['name'];
 $lname     = $_POST['subject'];
 $email    = $_POST['email'];
 //$phone     = $_POST['phone'];
 $comments = $_POST[''];
 
-if(trim($name) == '') {
+if(trim($fname) == '') {
 	echo '<div class="alert alert-error">We apologize for the inconvinience, we are not accepting requests to be added to the mailing list at this time.</div>';
 	exit();
 } else if(trim($email) == '') {
@@ -53,7 +53,7 @@ $e_subject = 'Contact Form';
 
 $e_body = "You have been contacted by $name, their additional message is as follows." . PHP_EOL . PHP_EOL;
 $e_content = "\"$comments\"" . PHP_EOL . PHP_EOL;
-$e_reply = "You can contact $name via email $email";
+$e_reply = "You can contact $fname via email $email";
 
 $msg = wordwrap( $e_body . $e_content . $e_reply, 70 );
 
