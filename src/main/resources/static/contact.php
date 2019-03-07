@@ -11,7 +11,7 @@ if (!defined("PHP_EOL")) define("PHP_EOL", "\r\n");
 
 //$fname     = $_POST['fname'];
 $fname     = $_POST['fname'];
-//$lname     = $_POST['subject'];
+$lname     = $_POST['subject'];
 $email    = $_POST['email'];
 //$phone     = $_POST['phone'];
 $comments = $_POST[''];
